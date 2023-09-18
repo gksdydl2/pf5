@@ -1,0 +1,11 @@
+div#title{
+  padding-top: 100px;
+  max-width: 924px;
+}
+div#title a.main{
+  background-image: url(../img/main.png);
+  max-width: 924px;
+  height: 464px;
+  display: block;
+  font-size: 0;
+}

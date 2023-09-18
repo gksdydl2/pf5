@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여기어때 리뉴얼</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/title.css">
+    <link rel="stylesheet" href="css/category.css">
+    <link rel="stylesheet" href="css/news.css">
+    <link rel="stylesheet" href="css/appdown.css">
+    <link rel="stylesheet" href="css/event.css">
+    <link rel="stylesheet" href="css/ask.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <script src="js/jquery-3.7.0.min.js" type="text/javascript"></script>
+
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(window).on('scroll',function(){
+                if($(window).scrollTop()){
+                    $('header').addClass('scroll');
+                }
+                else{
+                    $('header').removeClass('scroll');
+                }
+                if($(window).scrollTop()>400){
+                    $(".top").fadeIn(200);
+                }
+                else{
+                    $(".top").fadeOut(200);
+                }
+            });
+            $('.autoplay').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                dots: true
+            });
+            $("header .wrap ul li.over").hover(
+                function(){
+                    $("header .wrap ul li.over ul.list").show();
+                },
+                function(){
+                    $("header .wrap ul li.over ul.list").hide();
+                }
+            );
+            $("header .wrap .search").click(function(){
+                $("header .wrap > ul").hide();
+                $("header .wrap .search").addClass("open");
+                $("div.srch_bg").fadeIn(100);
+                $("div.scroll_srch").fadeIn(100);
+                $("header div.srch_bar").css("display","flex");
+                $("header div.srch_bar button.cancel").hide().fadeIn(500);
+            });
+            $("header div.srch_bar button.cancel").click(function(){
+                $("header .wrap .search").removeClass("open")
+                $("div.srch_bg").fadeOut(100);
+                $("div.scroll_srch").fadeOut(100);
+                $("header div.srch_bar").css("display","none");
+                $("header .wrap > ul").show();
+            });
+            $("header .wrap a.ham").click(function(){
+                $(".mobile_menu").show();
+                $(".gnb_opacity").show();
+                $('.mobile_menu').stop().animate({left:0,right:56},'100');
+                return false
+            });
+            $(".close").click(function(){
+                $(".mobile_menu").hide();
+                $(".gnb_opacity").fadeOut();
+            });
+            $("div.mobile_menu .menu_body ul .sum button").click(function(){
+                $(this).toggleClass("page");
+                $(this).next().toggle();
+            });
+        });
+    </script>
+</head>
+<body>
+    <header class="">
+        <div class="wrap flex">
+            <a href="" class="ham">메뉴</a>
+            <div class="gnb_opacity">
+                <button class="close">닫기</button>
+            </div>
+            <div class="mobile_menu" style="display: none;">
+                <div class="menu_top">
+                    <div class="join">
+                        로그인 후 예약하시면<br>할인 쿠폰과 추가 혜택을 받을 수 있어요.<br>
+                        <a href="">
+                            <span>로그인</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="point">
+                    <a href="">
+                        <p>
+                            -
+                            <br>
+                            <span>포인트</span>
+                        </p>
+                    </a>
+                    <a href="">
+                        <p>
+                            -
+                            <br>
+                            <span>쿠폰함</span>
+                        </p>
+                    </a>
+                </div>
+                <div class="menu_body">
+                    <ul>
+                        <li>
+                            <a href="">홈</a>
+                        </li>
+                        <li class="sum">
+                            <button><span>숙소유형</span></button>
+                            <ul>
+                                <li><a href="">모텔</a></li>
+                                <li><a href="">호텔·리조트</a></li>
+                                <li><a href="">펜션</a></li>
+                                <li><a href="">게스트하우스</a></li>
+                                <li><a href="">캠핑·글램핑</a></li>
+                                <li><a href="">한옥</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">내주변</a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <a href="">예약내역</a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li class="sum">
+                            <button><span>더보기</span></button>
+                            <ul>
+                                <li><a href="">공지사항</a></li>
+                                <li><a href="">이벤트</a></li>
+                                <li><a href="">고객문의</a></li>
+                                <li><a href="">알림설정</a></li>
+                                <li><a href="">여기어때 상품권 잔액 조회</a></li>
+                                <li><a href="">약관 및 정책</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <h1><a href="">여기어때</a></h1>
+            <button class="search">검색</button>
+            <ul class="flex" style="display: flex">
+                <li><a href="">내주변</a></li>
+                <li><a href="">예약내역</a></li>
+                <li class="over">
+                    <button type="button">
+                        <span>더보기</span>
+                    </button>
+                    <ul class="list">
+                        <li><a href="">공지사항</a></li>
+                        <li><a href="">이벤트</a></li>
+                        <li><a href="">자주 묻는 질문</a></li>
+                        <li><a href="">1:1 문의</a></li>
+                        <li><a href="">약관 및 정책</a></li>
+                    </ul>
+                </li>
+                <li><a href="https://www.goodchoice.kr/user/login">로그인</a></li>
+            </ul>
+        </div>
+        <div class="srch_bar">
+            <div class="txt">
+                <input id="keyword" type="text" placeholder="지역, 숙소명" autocomplete="off">
+            </div>
+            <button class="cancel">취소</button>
+        </div>
+    </header>
+    <div class="srch_bg">
+        <div class="scroll_srch">
+            <div class="scroller">
+                <h2>추천 검색어</h2>
+                <ul>
+                    <li><a href="">오션뷰</a></li>
+                    <li><a href="">파티룸</a></li>
+                    <li><a href="">야외수영장</a></li>
+                    <li><a href="">속초</a></li>
+                    <li><a href="">애견동반펜션</a></li>
+                    <li><a href="">여수</a></li>
+                    <li><a href="">제주도</a></li>
+                    <li><a href="">안면도</a></li>
+                    <li><a href="">남해</a></li>
+                    <li><a href="">부산</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <main>
+        <div id="title" class="wrap">
+            <a href="https://www.goodchoice.kr/more/eventView/3328" class="main">타이틀</a>
+        </div>
+        <section id="category">
+            <div class="wrap padding50">
+                <h2 class="hide">숙소유형</h2>
+                <ul class="flex">
+                    <li>
+                        <a href="">
+                            <img src="img/motel.png" alt="">
+                            <span>모텔</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="img/hotel.png" alt="">
+                            <span>호텔</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="img/fension.png" alt="">
+                            <span>펜션</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="img/guesthouse.png" alt="">
+                            <span>게스트하우스</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="img/camping.png" alt="">
+                            <span>캠핑·글램핑</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="img/travel.png" alt="">
+                            <span>해외 여행</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section id="news">
+            <div class="wrap">
+                <h2 class="h4">여기어때 소식</h2>
+                <ul class="flex">
+                    <li>
+                        <a href="https://www.goodchoice.kr/b2b/intro" target="_blank">
+                            <img src="img/n1.png" alt="">
+                            <h3 class="h5">여기어때 비즈니스</h3>
+                            <p>출장부터 복지까지<br>여기어때 비즈니스로 스마트하게</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.goodchoice.kr/font" target="_blank">
+                            <img src="img/n2.png" alt="">
+                            <h3 class="h5">여기어때 서체 출시</h3>
+                            <p>젊고 당당한 여기어때 잘난체<br>지금 다운로드 받으세요!</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section id="appdown">
+            <div class="wrap">
+                <p>앱 다운 받고<span>더 많은 혜택</span>받으세요</p>
+                <div>
+                    <a href="https://play.google.com/store/apps/details?id=kr.goodchoice.abouthere" target="_blank">
+                        <img src="img/android.png" alt="구글플레이스토어">
+                    </a>
+                    <a href="https://apps.apple.com/kr/app/yeogieottae-1deung-sugbag/id884043462?ign-mpt=uo%3D2" target="_blank">
+                        <img src="img/ios.png" alt="애플앱스토어">
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section id="event">
+            <div class="wrap">
+                <h2 class="h4">이벤트</h2>
+                <ul class="autoplay">
+                    <li>
+                        <a href="">
+                            <img src="img/e1.jpg" alt="레저 구매 할인">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="img/e2.png" alt="국내 해외 숙소 쿠폰세트">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.goodchoice.kr/more/eventView/3290?page=0">
+                            <img src="img/e3.png" alt="선착순 더블 할인">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                        <a href="https://www.goodchoice.kr/more/eventView/3293?page=0">
+                            <img src="img/e4.png" alt="베라 할인">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.goodchoice.kr/more/eventView/608?page=0">
+                            <img src="img/e5.jpg" alt="더블 혜택 받고 예약">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section id="ask">
+            <div class="wrap">
+                <ul>
+                    <li>
+                        <a href="">광고 신청</a>
+                    </li>
+                    <li>
+                        <a href="https://guest.goodchoice.kr/auth" target="_blank">게하 등록</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="wrap paddingB50">
+            <ul class="flex">
+                <li>
+                    <a href="">회사소개</a>
+                    <span>|</span>
+                </li>
+                <li>
+                    <a href="">이용약관</a>
+                    <span>|</span>
+                </li>
+                <li>
+                    <a href="">개인정보처리방침</a>
+                    <span>|</span>
+                </li>
+                <li>
+                    <a href="">소비자 분쟁해결 기준</a>
+                    <span>|</span>
+                </li>
+                <li>
+                    <a href="">사업자 정보확인</a>
+                    <span>|</span>
+                </li>
+                <li>
+                    <a href="">여기어때 마케팅센터</a>
+                    <span>|</span>
+                </li>
+                <li>
+                    <a href="">액티비티 호스트센터</a>
+                    <span>|</span>
+                </li>
+                <li>
+                    <a href="">HOTEL 여기어때</a>
+                    <span>|</span>
+                </li>
+                <li>
+                    <a href="">콘텐츠산업진흥법에 의한 표시</a></li>
+            </ul>
+            <p class="call">고객행복센터 1670-6250<span>오전 9시 - 새벽 3시</span></p>
+            <p class="p">(주) 여기어때컴퍼니</p>
+            <address>주소 : 서울특별시 강남구 봉은사로 479, 479타워 11층 | 대표이사 : 정명훈 | 사업자등록번호: 742-86-00224 | 전자우편주소 : help@goodchoice.kr
+            <br>통신판매번호 : 2017-서울강남-01779 | 관광사업자 등록번호: 제1026-24호 | 전화번호 : 1670-6250 | 호스팅서비스제공자의 상호 표시: (주)여기어때컴퍼니</address>
+            <p class="p">(주) 여기어때컴퍼니는 통신판매중개자로서 통신판매의 당사자가 아니며, 상품의 예약, 이용 및 환불 등과 관련한 의무와 책임은 각 판매자에게 있습니다.</p>
+            <p class="copyright">Copyright GC COMPANY Corp. All rights reserved.</p>
+            <div>
+                <a href="https://www.facebook.com/goodchoiceofficial" target="_blank" class="facebook">facebook</a>
+                <a href="https://blog.gccompany.co.kr/" target="_blank" class="blog">blog</a>
+            </div>
+    </footer>
+    <button class="top">상단으로</button>
+</body>
+</html>

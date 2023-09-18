@@ -1,0 +1,199 @@
+header {
+  background: #f7323f;
+  height: 72px;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  transition: 0.4s;
+}
+header .wrap {
+  height: 100%;
+  align-items: center;
+  position: relative;
+  justify-content: space-between;
+}
+header .wrap a.ham{
+  display: none;
+}
+header .wrap h1 {
+  background-image: url(../img/w-logo.png);
+  width: 95px;
+  height: 21px;
+  background-repeat: no-repeat;
+  margin-left: 30px;
+}
+header .wrap h1 a {
+  font-size: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+header .wrap .search {
+  border: none;
+  background-color: transparent;
+  font-size: 0;
+  width: 20px;
+  height: 20px;
+  background-image: url(../img/w-search.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: calc((100% - 18px) / 2);
+  left: 60%;
+  transition: left .5s;
+  cursor: pointer;
+}
+header .wrap>ul {
+  gap: 30px;
+  padding-right: 30px;
+  align-items: center;
+  display: flex;
+}
+header .wrap>ul>li>a {
+  color: rgba(255,255,255,0.8);
+  font-size: 17px;
+}
+header .wrap ul li.over button {
+  border: none;
+  padding: 0;
+  background: none;
+  line-height: 1;
+  color: rgba(255,255,255,0.8);
+  letter-spacing: 0;
+  cursor: pointer;
+}
+header .wrap ul li.over button span {
+  font-size: 17px;
+  position: relative;
+  line-height: 50px;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+header .wrap ul li.over ul.list {
+  display: none;
+  position: absolute;
+  border-radius: 5px;
+  padding: 32px;
+  background: #fff;
+  box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.2);
+  text-align: left;
+  width: 184px;
+  box-sizing: border-box;
+  top: 57px;
+  right: 40px;
+}
+header .wrap ul li.over ul.list li {
+  display: block;
+  min-width: auto;
+  min-height: auto;
+  margin: 0 0 14px 0;
+}
+header .wrap ul li.over ul.list li:last-child {
+  margin-bottom: 0;
+}
+
+header div.srch_bar {
+  display: none;
+  position: absolute;
+  top: calc(50% - 10px);
+  left: 50%;
+  width: 725px;
+  margin-left: -277px;
+}
+header div.srch_bar .txt {
+  width: 100%;
+}
+header div.srch_bar .txt input {
+  border: none;
+  background: transparent;
+  font-size: 17px;
+  color: rgba(255,255,255,0.7);
+  width: 100%;
+  height: 21px;
+  outline: none;
+}
+header div.srch_bar button.cancel {
+  width: 35px;
+  height: 35px;
+  font-size: 0;
+  border: none;
+  background-color: transparent;
+  background-image: url(../img/w-close.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 24px;
+  position: absolute;
+  top: -8px;
+  right: -31px;
+  cursor: pointer;
+}
+
+div.srch_bg  { 
+  position: fixed;
+  top: 72px;
+  background: rgba(0,0,0,0.6);
+  z-index: 200;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  transition: .4s;
+  display: none;
+}
+div.srch_bg .scroll_srch {
+  display: none;
+  position: fixed;
+  width: 787px;
+  height: 352px;
+  top: 72px;
+  background-color: white;
+  border-radius: 0 0 4px 4px;
+  left: 50%;
+  margin-left: -305px;
+  z-index: 400;
+}
+div.srch_bg .scroll_srch .scroller {
+  padding: 24px 20px;
+}
+div.srch_bg .scroll_srch .scroller h2 {
+  margin-bottom: 11px;
+  font-size: 14px;
+  font-weight: bold;
+}
+div.srch_bg .scroll_srch .scroller ul li {
+  margin-bottom: 11px;
+}
+div.srch_bg .scroll_srch .scroller ul li a {
+  color: rgb(0,121,107);
+  font-size: 14px;
+}
+
+
+/* 스크롤 시 헤더 */
+.scroll {
+  background: white;
+  box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.1);
+}
+header.scroll .wrap > ul > li > a {
+  color: black;
+}
+header.scroll .wrap ul li.over button {
+  color: black;
+}
+header.scroll .wrap h1 {
+  background-image: url(../img/r-logo.png);
+  background-size: contain;
+}
+header.scroll .wrap .search {
+  background-image: url(../img/b-search.svg);
+  background-size: contain;
+}
+header.scroll div.srch_bar button.cancel {
+   background-image: url(../img/b-close.png);
+}
+header.scroll div.srch_bar .txt input {
+  color: rgba(0,0,0,0.38);
+}
+
+
+.open {
+  left: 20% !important;
+}

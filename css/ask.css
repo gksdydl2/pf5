@@ -1,0 +1,26 @@
+#ask .wrap {
+  max-width: 962px;
+  margin: 24px auto 0 auto;
+}
+#ask .wrap ul {
+  display: flex;
+  justify-content: space-between;
+}
+#ask .wrap ul li {
+  height: 200px;
+  border: 1px solid rgba(0,0,0,0.04);
+  box-sizing: border-box;
+}
+#ask .wrap ul li a {
+  display: block;
+  width: 472px;
+  height: 100%;
+  background-size: cover;
+  font-size: 0;
+}
+#ask .wrap ul li:nth-child(1) a {
+  background-image: url(../img/ev1.png);
+}
+#ask .wrap ul li:nth-child(2) a {
+  background-image: url(../img/ev2.png);
+}

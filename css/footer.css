@@ -1,0 +1,82 @@
+footer {
+  background-color: rgb(245,245,245);
+  border-top: 1px solid rgba(0,0,0,0.08);
+  padding: 63px 31px 40px 31px;
+  font-size: 13px;
+  color: rgba(0,0,0,0.38);
+  margin-top: 130px;
+}
+footer .wrap ul {
+  flex-wrap: wrap;
+}
+footer .wrap ul li {
+  align-items: center;
+  display: flex;
+}
+footer .wrap ul li:nth-child(6) {
+  clear: both;
+}
+footer .wrap ul li a {
+  color: rgba(0,0,0,0.38);
+  line-height: 1.8;
+}
+footer .wrap ul li span {
+  padding: 0px 10px;
+  display: inline-block;
+  position: relative;
+  top: -2px;
+}
+footer .wrap p.call{
+  line-height: 5;
+  font-weight: bold;
+}
+footer .wrap p.call span{
+  font-weight: normal;
+  padding-left: 10px;
+}
+footer .wrap p.p {
+  color: rgba(0,0,0,0.38);
+  font-size: 13px;
+  line-height: 4;
+}
+footer .wrap p.copyright {
+  padding-bottom: 30px;
+}
+footer .wrap div{
+  border-top: 1px solid rgba(0,0,0,0.04);
+  padding-top: 20px;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+footer .wrap div a{
+  display: block;
+  background-repeat: no-repeat;
+  width: 25px;
+  height: 25px;
+  font-size: 0;
+}
+footer .wrap div a.facebook {
+  background-image: url(../img/facebook.svg);
+}
+footer .wrap div a.blog {
+  background-image: url(../img/blog.png);
+  background-size: contain;
+  width: 30px;
+  background-position: center;
+}
+button.top {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  border: none;
+  background-image: url(../img/top.png);
+  background-repeat: no-repeat;
+  background-size: 40px auto;
+  display: block;
+  width: 40px;
+  height: 40px;
+  font-size: 0;
+  cursor: pointer;
+  display: none;
+}

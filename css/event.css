@@ -1,0 +1,23 @@
+#event .wrap {
+  max-width: 962px;
+}
+#event .wrap h2 {
+  margin-bottom: 35px;
+  font-weight: bold;
+}
+#event .wrap ul li a img {
+  width: 100%;
+}
+#event .wrap ul .slick-dots { 
+  bottom: 10px;
+}
+#event .wrap ul .slick-dots li {
+  margin: 0;
+}
+#event .wrap ul .slick-dots li button::before {
+  color: white;
+  font-size: 9px;
+}
+#event .wrap ul .slick-dots li button:hover::before {
+  opacity: 0;
+}

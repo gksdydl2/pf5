@@ -1,0 +1,28 @@
+#appdown {
+  margin-bottom: 50px;
+}
+#appdown .wrap {
+  background-image: url(../img/appbg.png);
+  background-size: cover;
+  display: block;
+  width: 962px;
+  height: 320px;
+  text-align: center;
+}
+#appdown .wrap p {
+  font-size: 28px;
+  padding: 103px 0 27px 0;
+}
+#appdown .wrap p span {
+  font-weight: bold;
+}
+#appdown .wrap div a {
+  display: inline-block;
+  width: 168px;
+  height: 52px;
+  margin: 0 5px;
+}
+#appdown .wrap div a img {
+  width: 168px;
+  height: auto;
+}
